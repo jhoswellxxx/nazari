@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        p {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #ff4081;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+        .button:hover {
+            background-color: #e91e63;
+        }
+    </style>
+    <script>
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            let newWidth = Math.random() * (window.innerWidth - 100);
+            let newHeight = Math.random() * (window.innerHeight - 100);
+            button.style.position = 'absolute';
+            button.style.left = newWidth + 'px';
+            button.style.top = newHeight + 'px';
+            let currentSize = parseFloat(window.getComputedStyle(button, null).getPropertyValue('font-size'));
+            button.style.fontSize = (currentSize * 0.8) + 'px';
+        }
+    </script>
+</head>
+<body>
+    <h1>¡Hola, Nazari!</h1>
+    <p>Desde que te conocí, cada día ha sido especial.</p>
+    <p>Me encantaría que fueras mi San Valentín este año.</p>
+    <button class="button" onclick="alert('¡Yay! Espero que sí!')">¡Sí, quiero!</button>
+    <button class="button" id="noButton" onclick="moveButton()">No, gracias.</button>
+</body>
+</html>
